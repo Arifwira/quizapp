@@ -1,13 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage(this.startQuiz, {super.key});
-
-  final void Function() startQuiz;
+class ResultScreen extends StatelessWidget{
+  const ResultScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
     return Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
             height: 80,
           ),
           Text(
-            'Learn Flutter the Fun Way!',
+            'INI HASILLLLL',
             style: GoogleFonts.lato(
                 color: const Color.fromARGB(150, 255, 255, 255), fontSize: 24),
           ),
@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
             height: 30,
           ),
           OutlinedButton.icon(
-            onPressed: startQuiz,
+            onPressed: (){},
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
             ),
@@ -44,4 +44,5 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+  
 }
