@@ -1,6 +1,6 @@
 # quizapp
 
-A new Flutter project.
+This is a trial project where i learn flutter from flutter course by Maximilian Schwarzmüller
 
 ## Getting Started
 
