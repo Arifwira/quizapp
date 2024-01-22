@@ -26,6 +26,7 @@ class _QuizState extends State<Quiz> {
 
   void switchScreen() {
     setState(() {
+      selectedAnswer = [];
       activeScreen = 'question';
     });
   }
@@ -36,22 +37,20 @@ class _QuizState extends State<Quiz> {
     if (selectedAnswer.length == questions.length) {
       setState(() {
         activeScreen = 'results';
-        selectedAnswer = [];
       });
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    Widget page;
-    if (activeScreen == 'home') {
-      page = HomePage(switchScreen);
-    } else if (activeScreen == 'question') {
-      page = QuestionScreen(addAnswer: addAnswer);
-    } else {
-      page = ResultScreen();
+    Widget screenWidget = HomePage(switchScreen);
+    if (activeScreen == 'question') {
+      screenWidget = QuestionScreen(addAnswer: addAnswer);
     }
-    Widget screenWidget = page;
+    if (activeScreen == 'results'){
+      screenWidget =  ResultScreen(choosenAnswer: selectedAnswer, switchScreen: switchScreen);
+    }
+
     developer.log(selectedAnswer.join(" "), name: 'INI COBA');
     return MaterialApp(
       home: Scaffold(
